@@ -1,0 +1,25 @@
+{
+  "name": "suyash-portfolio",
+  "version": "1.0.0",
+  "description": "Artistic 3D Portfolio for Suyash Agrawal - Blockchain Developer",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview"
+  },
+  "keywords": ["portfolio", "threejs", "blockchain", "solidity", "cairo"],
+  "author": "Suyash Agrawal",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.160.0",
+    "gsap": "^3.12.5",
+    "lenis": "^1.0.36",
+    "intersection-observer": "^0.12.2"
+  },
+  "devDependencies": {
+    "vite": "^5.0.12",
+    "@vitejs/plugin-legacy": "^5.3.0"
+  }
+}

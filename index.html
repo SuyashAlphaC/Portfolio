@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suyash Agrawal | Blockchain Developer</title>
+    <meta name="description" content="Portfolio of Suyash Agrawal - Passionate Blockchain Developer specializing in Solidity, Cairo, and Smart Contracts">
+    <meta name="keywords" content="blockchain, solidity, cairo, smart contracts, web3, ethereum, starknet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SA</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-canvas-container">
+            <canvas id="hero-canvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Suyash</span>
+                    <span class="title-line">Agrawal</span>
+                </h1>
+                <p class="hero-subtitle">Blockchain Developer</p>
+                <p class="hero-description">From Enthusiasm to Expertise: Building Future Blocks!</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">Scroll</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate about blockchain technology and decentralized systems</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Innovative Web3 Developer with expertise in Ethereum and Solana blockchain technologies, pursuing B.Tech in Computer Science and Engineering at IIITM Gwalior. Experienced in end-to-end decentralized application development, smart contract optimization, and Web3 frontend integration.</p>
+                    <p>Skilled in Solidity, Rust, TypeScript, and modern blockchain development tools with a track record of organizing and leading technical initiatives. Currently contributing to cutting-edge projects including Cairo-based circuit breakers at Aegis Labs, ZK-based stablecoin protocols, and Solana micro-lending solutions.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">37+</span>
+                            <span class="stat-label">GitHub Repos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Major Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Languages</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <canvas id="about-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Showcasing my blockchain development expertise</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-project="lottery">
+                    <div class="project-visual">
+                        <canvas class="project-canvas"></canvas>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Smart Contract Lottery</h3>
+                        <p class="project-description">Automated lottery game with random winner selection using Chainlink VRF and Foundry framework</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Solidity</span>
+                            <span class="tech-tag">Foundry</span>
+                            <span class="tech-tag">Chainlink VRF</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SuyashAlphaC/Foundry-Smart-Contract-Lottery" target="_blank" class="project-link">
+                                <span>GitHub</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="ccip">
+                    <div class="project-visual">
+                        <canvas class="project-canvas"></canvas>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Cross-Chain NFT</h3>
+                        <p class="project-description">Cross-chain NFT transfer implementation using burn and mint protocol with Chainlink CCIP</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Solidity</span>
+                            <span class="tech-tag">CCIP</span>
+                            <span class="tech-tag">NFT</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SuyashAlphaC/CCIP-Cross-Chain-NFT" target="_blank" class="project-link">
+                                <span>GitHub</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="project-card" data-project="aegis-circuit">
+                    <div class="project-visual">
+                        <canvas class="project-canvas"></canvas>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Aegis Labs Circuit Breaker</h3>
+                        <p class="project-description">Core member at Aegis Labs developing production-grade Cairo-based circuit breaker patterns for StarkNet ecosystem, ensuring fault-tolerant smart contract execution</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Cairo</span>
+                            <span class="tech-tag">StarkNet</span>
+                            <span class="tech-tag">Aegis Labs</span>
+                            <span class="tech-tag">Production</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/AegisLabs" target="_blank" class="project-link">
+                                <span>Aegis Labs</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="solana-lending">
+                    <div class="project-visual">
+                        <canvas class="project-canvas"></canvas>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Solana Micro Lending Protocol</h3>
+                        <p class="project-description">Decentralized micro-lending platform on Solana enabling peer-to-peer lending with algorithmic risk assessment and automated liquidation mechanisms</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Rust</span>
+                            <span class="tech-tag">Solana</span>
+                            <span class="tech-tag">Anchor</span>
+                            <span class="tech-tag">DeFi</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SuyashAlphaC/Solana-MicroLending-Protocol" target="_blank" class="project-link">
+                                <span>GitHub</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="zk-stablecoin">
+                    <div class="project-visual">
+                        <canvas class="project-canvas"></canvas>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">ZK-Based Stablecoin Protocol</h3>
+                        <p class="project-description">Privacy-preserving stablecoin implementation using zero-knowledge proofs for confidential transactions while maintaining regulatory compliance and price stability</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">ZK-SNARKs</span>
+                            <span class="tech-tag">Circom</span>
+                            <span class="tech-tag">Solidity</span>
+                            <span class="tech-tag">Privacy</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SuyashAlphaC/ZK-stablecoin" target="_blank" class="project-link">
+                                <span>GitHub</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">My technical expertise in blockchain development</p>
+            </div>
+            <div class="skills-content">
+                <div class="skills-visual">
+                    <canvas id="skills-canvas"></canvas>
+                </div>
+                <div class="skills-icons-grid">
+                    <div class="skill-icon" data-skill="solidity" data-progress="90">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 256 417" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M127.961 0l-2.795 9.5v275.668l2.795 2.79 127.962-75.638L127.961 0z" fill="#343434"/>
+                                <path d="M127.962 0L0 212.32l127.962 75.639V154.158V0z" fill="#8C8C8C"/>
+                                <path d="M127.961 312.187l-1.575 1.92v98.199l1.575 4.601L256 236.587l-128.039 75.6z" fill="#3C3C3B"/>
+                                <path d="M127.962 416.905v-104.72L0 236.585l127.962 180.32z" fill="#8C8C8C"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Solidity</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">90%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-icon" data-skill="cairo" data-progress="80">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Cairo</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">80%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-icon" data-skill="rust" data-progress="80">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.8346 11.7033L22.0193 9.96973C22.1434 9.5248 22.2104 9.06434 22.2104 8.59655C22.2104 6.31591 21.0482 4.29124 19.1654 3.0199L20.8422 1.34314C21.1581 1.02731 21.1581 0.518896 20.8422 0.203057C20.5264 -0.112782 20.018 -0.112782 19.7022 0.203057L18.0254 1.87982C16.2832 0.723327 14.1961 0.0454406 11.9514 0.0454406C9.70667 0.0454406 7.61961 0.723327 5.87737 1.87982L4.20056 0.203057C3.88473 -0.112782 3.37632 -0.112782 3.06048 0.203057C2.74465 0.518896 2.74465 1.02731 3.06048 1.34314L4.73729 3.0199C2.85449 4.29124 1.69231 6.31591 1.69231 8.59655C1.69231 9.06434 1.75929 9.5248 1.88341 9.96973L0.0680837 11.7033C-0.247748 12.0191 -0.247748 12.5275 0.0680837 12.8434C0.383923 13.1592 0.892334 13.1592 1.20817 12.8434L3.02351 11.1098C3.77718 12.2328 4.85559 13.1385 6.14717 13.7012V18.5028C6.14717 18.9639 6.52607 19.3428 6.98717 19.3428C7.44828 19.3428 7.82718 18.9639 7.82718 18.5028V13.8372C9.13299 14.0583 10.5011 14.0583 11.8069 13.8372V18.5028C11.8069 18.9639 12.1858 19.3428 12.6469 19.3428C13.108 19.3428 13.4869 18.9639 13.4869 18.5028V13.7012C14.7785 13.1385 15.8569 12.2328 16.6106 11.1098L18.4259 12.8434C18.7417 13.1592 19.2501 13.1592 19.566 12.8434C19.8818 12.5275 19.8818 12.0191 19.566 11.7033L23.8346 11.7033Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Rust</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">80%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-icon" data-skill="solana" data-progress="85">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 397.7 311.7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <linearGradient id="solana-gradient" x1="360.8791" y1="351.4553" x2="141.213" y2="-69.2936" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#00FFA3"/>
+                                    <stop offset="1" stop-color="#DC1FFF"/>
+                                </linearGradient>
+                                <path d="M64.6,237.9c2.4-2.4,5.7-3.8,9.2-3.8h317.4c5.8,0,8.7,7,4.6,11.1l-62.7,62.7c-2.4,2.4-5.7,3.8-9.2,3.8H6.5c-5.8,0-8.7-7-4.6-11.1L64.6,237.9z" fill="url(#solana-gradient)"/>
+                                <path d="M64.6,3.8C67.1,1.4,70.4,0,73.8,0h317.4c5.8,0,8.7,7,4.6,11.1L333.1,73.8c-2.4,2.4-5.7,3.8-9.2,3.8H6.5c-5.8,0-8.7-7-4.6-11.1L64.6,3.8z" fill="url(#solana-gradient)"/>
+                                <path d="M333.1,120.1c-2.4-2.4-5.7-3.8-9.2-3.8H6.5c-5.8,0-8.7,7-4.6,11.1l62.7,62.7c2.4,2.4,5.7,3.8,9.2,3.8h317.4c5.8,0,8.7-7,4.6-11.1L333.1,120.1z" fill="url(#solana-gradient)"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Solana</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">85%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-icon" data-skill="ethereum" data-progress="85">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 256 417" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M127.961 0l-2.795 9.5v275.668l2.795 2.79 127.962-75.638L127.961 0z" fill="#343434"/>
+                                <path d="M127.962 0L0 212.32l127.962 75.639V154.158V0z" fill="#8C8C8C"/>
+                                <path d="M127.961 312.187l-1.575 1.92v98.199l1.575 4.601L256 236.587l-128.039 75.6z" fill="#3C3C3B"/>
+                                <path d="M127.962 416.905v-104.72L0 236.585l127.962 180.32z" fill="#8C8C8C"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Ethereum</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">85%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-icon" data-skill="javascript" data-progress="85">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z" fill="#F7DF1E"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">85%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-icon" data-skill="typescript" data-progress="80">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z" fill="#3178C6"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">TypeScript</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">80%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-icon" data-skill="foundry" data-progress="80">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Foundry</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">80%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-icon" data-skill="hardhat" data-progress="80">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 1.5l-8 4.3v8.4l8 4.3 8-4.3V5.8l-8-4.3z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="m8 10 4-2 4 2v4l-4 2-4-2v-4z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Hardhat</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">80%</span>
+                        </div>
+                    </div>
+
+                    <!-- Docker -->
+                    <div class="skill-icon" data-skill="docker" data-progress="75">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.119a.185.185 0 0 0-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V3.574a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.186m0 2.716h2.118a.187.187 0 0 0 .186-.186V6.29a.186.186 0 0 0-.186-.185h-2.118a.185.185 0 0 0-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 0 0 .184-.186V6.29a.185.185 0 0 0-.185-.185H8.1a.185.185 0 0 0-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 0 0 .185-.186V6.29a.185.185 0 0 0-.185-.185H5.136a.186.186 0 0 0-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 0 0 .186-.185V9.006a.186.186 0 0 0-.186-.186h-2.118a.185.185 0 0 0-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 0 0 .185-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.186.186 0 0 0-.186.186v1.887c0 .102.084.185.186.186m-2.92 0h2.12a.185.185 0 0 0 .184-.185V9.006a.185.185 0 0 0-.184-.186h-2.12a.185.185 0 0 0-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338 0-.676.03-1.01.09-.248-1.7-1.653-2.53-1.718-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 0 0-.75.748 11.376 11.376 0 0 0 .692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 0 0 3.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z" fill="#2496ED"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Docker</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">75%</span>
+                        </div>
+                    </div>
+
+                    <!-- Kubernetes -->
+                    <div class="skill-icon" data-skill="kubernetes" data-progress="70">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.375C11.688 2.375 11.438 2.625 11.438 2.938V4.75C11.438 5.063 11.688 5.313 12 5.313C12.313 5.313 12.563 5.063 12.563 4.75V2.938C12.563 2.625 12.313 2.375 12 2.375ZM7.781 4.75C7.531 4.844 7.344 5.094 7.344 5.375C7.344 5.688 7.594 5.938 7.906 5.938H9.719C10.031 5.938 10.281 5.688 10.281 5.375C10.281 5.063 10.031 4.813 9.719 4.813H7.906C7.844 4.813 7.813 4.781 7.781 4.75Z" fill="#326CE5"/>
+                                <path d="M12 7.5L4.5 12L12 16.5L19.5 12L12 7.5Z" stroke="#326CE5" stroke-width="1.5" fill="none"/>
+                                <circle cx="12" cy="12" r="2" fill="#326CE5"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Kubernetes</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">70%</span>
+                        </div>
+                    </div>
+
+                    <!-- Chainlink -->
+                    <div class="skill-icon" data-skill="chainlink" data-progress="85">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0L9.798 3.544L12 7.088L14.202 3.544zM12 16.912L14.202 20.456L12 24L9.798 20.456zM20.456 9.798L24 12L20.456 14.202L16.912 12zM7.088 12L3.544 14.202L0 12L3.544 9.798z" fill="#375BD2"/>
+                                <path d="M12 7.088L16.912 12L12 16.912L7.088 12z" fill="#375BD2" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Chainlink</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">85%</span>
+                        </div>
+                    </div>
+
+                    <!-- Alchemy -->
+                    <div class="skill-icon" data-skill="alchemy" data-progress="80">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#4E92FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="12" r="3" fill="#4E92FF"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Alchemy</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">80%</span>
+                        </div>
+                    </div>
+
+                    <!-- Ganache -->
+                    <div class="skill-icon" data-skill="ganache" data-progress="75">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L22 8.5V15.5L12 22L2 15.5V8.5L12 2Z" stroke="#E4A663" stroke-width="2" fill="none"/>
+                                <path d="M12 8L18 11V17L12 20L6 17V11L12 8Z" fill="#E4A663" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Ganache</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">75%</span>
+                        </div>
+                    </div>
+
+                    <!-- StarkNet -->
+                    <div class="skill-icon" data-skill="starknet" data-progress="80">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L4 6.5L12 11L20 6.5L12 2Z" fill="#6C5CE7"/>
+                                <path d="M4 17.5L12 22L20 17.5L12 13L4 17.5Z" fill="#6C5CE7"/>
+                                <path d="M4 12L12 16.5L20 12L12 7.5L4 12Z" fill="#6C5CE7" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">StarkNet</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">80%</span>
+                        </div>
+                    </div>
+
+                    <!-- C -->
+                    <div class="skill-icon" data-skill="c" data-progress="85">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.5986 9.682C15.9416 6.773 14.0706 4.5 12.0006 4.5C9.9306 4.5 8.0596 6.773 7.4026 9.682C6.6826 12.773 7.5996 15.773 9.5996 17.773C10.3596 18.533 11.1796 19 12.0006 19C12.8216 19 13.6416 18.533 14.4016 17.773C16.4016 15.773 17.3186 12.773 16.5986 9.682ZM12.0006 16.5C10.3446 16.5 9.0006 15.156 9.0006 13.5C9.0006 11.844 10.3446 10.5 12.0006 10.5C13.6566 10.5 15.0006 11.844 15.0006 13.5C15.0006 15.156 13.6566 16.5 12.0006 16.5Z" fill="#00599C"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">C</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">85%</span>
+                        </div>
+                    </div>
+
+                    <!-- C++ -->
+                    <div class="skill-icon" data-skill="cpp" data-progress="80">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.5986 9.682C15.9416 6.773 14.0706 4.5 12.0006 4.5C9.9306 4.5 8.0596 6.773 7.4026 9.682C6.6826 12.773 7.5996 15.773 9.5996 17.773C10.3596 18.533 11.1796 19 12.0006 19C12.8216 19 13.6416 18.533 14.4016 17.773C16.4016 15.773 17.3186 12.773 16.5986 9.682ZM12.0006 16.5C10.3446 16.5 9.0006 15.156 9.0006 13.5C9.0006 11.844 10.3446 10.5 12.0006 10.5C13.6566 10.5 15.0006 11.844 15.0006 13.5C15.0006 15.156 13.6566 16.5 12.0006 16.5Z" fill="#00599C"/>
+                                <path d="M17 11H19V13H17V15H15V13H13V11H15V9H17V11Z" fill="#00599C"/>
+                                <path d="M21 11H23V13H21V15H19V13H17V11H19V9H21V11Z" fill="#00599C"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">C++</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">80%</span>
+                        </div>
+                    </div>
+
+                    <!-- Noir -->
+                    <div class="skill-icon" data-skill="noir" data-progress="70">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L22 8V16L12 22L2 16V8L12 2Z" stroke="#1A1A1A" stroke-width="2" fill="none"/>
+                                <path d="M12 6L18 9V15L12 18L6 15V9L12 6Z" fill="#1A1A1A"/>
+                                <circle cx="12" cy="12" r="3" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Noir</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">70%</span>
+                        </div>
+                    </div>
+
+                    <!-- Git -->
+                    <div class="skill-icon" data-skill="git" data-progress="90">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.428 1.9l2.658 2.66c.645-.23 1.387-.087 1.9.428.717.717.717 1.88 0 2.597-.719.717-1.881.717-2.598 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.717.713 1.881 0 2.598-.719.717-1.889.717-2.607 0-.719-.717-.719-1.881 0-2.598.177-.177.383-.316.605-.406V8.835c-.222-.095-.428-.23-.605-.406-.545-.546-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189L10.929 23.55c.603.604 1.582.604 2.188 0l10.43-10.43c.603-.603.603-1.582-.001-2.189" fill="#F05032"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Git</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">90%</span>
+                        </div>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="skill-icon" data-skill="github" data-progress="90">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" fill="#181717"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">GitHub</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">90%</span>
+                        </div>
+                    </div>
+
+                    <!-- Linux -->
+                    <div class="skill-icon" data-skill="linux" data-progress="85">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 0 0 .603.329c.054-.025.099-.069.132-.119.025-.038.059-.070.099-.094.135-.081.29-.224.379-.28.063-.04.112-.094.134-.155.014-.038.02-.076.02-.114 0-.043-.007-.085-.02-.126-.025-.08-.062-.157-.11-.227-.067-.099-.154-.185-.26-.249-.106-.063-.228-.099-.354-.099-.203 0-.406.099-.546.28-.112.145-.154.34-.112.523.025.108.076.209.15.294.114.134.28.225.456.225.203 0 .406-.094.546-.28.112-.145.154-.34.112-.523-.025-.108-.076-.209-.15-.294-.114-.134-.28-.225-.456-.225z" fill="#FCC624"/>
+                                <path d="M11.302 6.776c-.676 0-1.227.551-1.227 1.227 0 .676.551 1.227 1.227 1.227.676 0 1.227-.551 1.227-1.227 0-.676-.551-1.227-1.227-1.227z" fill="#000"/>
+                                <path d="M13.858 6.776c-.676 0-1.227.551-1.227 1.227 0 .676.551 1.227 1.227 1.227.676 0 1.227-.551 1.227-1.227 0-.676-.551-1.227-1.227-1.227z" fill="#000"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Linux</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">85%</span>
+                        </div>
+                    </div>
+
+                    <!-- Vercel -->
+                    <div class="skill-icon" data-skill="vercel" data-progress="80">
+                        <div class="skill-icon-wrapper">
+                            <svg class="skill-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 1L24 22H0L12 1Z" fill="#000"/>
+                            </svg>
+                        </div>
+                        <span class="skill-name">Vercel</span>
+                        <div class="skill-progress-circle">
+                            <svg class="progress-ring" width="60" height="60">
+                                <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="3" fill="transparent" r="26" cx="30" cy="30"/>
+                            </svg>
+                            <span class="progress-text">80%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SVG Gradients -->
+                <svg width="0" height="0">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Achievements & Activities</h2>
+                <p class="section-subtitle">Recognition and contributions to the blockchain ecosystem</p>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 9m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" stroke="currentColor" stroke-width="2"/>
+                            <path d="m8 21l4 -7l4 7" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="achievement-title">Core Member at Aegis Labs</h3>
+                    <p class="achievement-description">Contributing to production-grade Cairo-based circuit breaker patterns for the StarkNet ecosystem</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="achievement-title">GitHub Achievements</h3>
+                    <p class="achievement-description">Quickdraw, YOLO, and Pull Shark achievements demonstrating consistent development contributions</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="m22 21-3-3m0 0a5 5 0 1 0-7-7 5 5 0 0 0 7 7" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="achievement-title">Technical Leadership</h3>
+                    <p class="achievement-description">Track record of organizing and leading technical initiatives in blockchain development</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="achievement-title">Multi-Chain Expertise</h3>
+                    <p class="achievement-description">Proficient in Ethereum, Solana, and StarkNet ecosystems with hands-on project experience</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="currentColor" stroke-width="2"/>
+                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="currentColor" stroke-width="2"/>
+                            <path d="m9 14 2 2 4-4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="achievement-title">B.Tech CSE Student</h3>
+                    <p class="achievement-description">Currently pursuing Computer Science and Engineering at ABV-IIITM Gwalior</p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="m12 1 3 6 6 3-6 3-3 6-3-6-6-3 6-3 3-6" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="achievement-title">Innovation Focus</h3>
+                    <p class="achievement-description">Developing cutting-edge solutions in ZK-proofs, DeFi protocols, and cross-chain technologies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Let's Build Something Amazing</h2>
+                    <p class="contact-description">Ready to collaborate on innovative blockchain projects? Let's connect and create the future together!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Location</h4>
+                                <p>ABV-IIITM Gwalior</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Email</h4>
+                                <p>Available on LinkedIn</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/SuyashAlphaC" target="_blank" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/suyash-agrawal-6a2662309/" target="_blank" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://x.com/suyash_eth" target="_blank" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                            <span>Twitter</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-visual">
+                    <canvas id="contact-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Suyash Agrawal. Built with passion for blockchain technology.</p>
+                <p class="footer-tagline">From Enthusiasm to Expertise: Building Future Blocks!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>
