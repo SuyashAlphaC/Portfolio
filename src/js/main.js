@@ -12,7 +12,7 @@ class ArtisticPortfolio {
         this.mouse = new THREE.Vector2();
         this.raycaster = new THREE.Raycaster();
         this.clock = new THREE.Clock();
-        
+
         // Scene management
         this.scenes = {
             hero: null,
@@ -21,7 +21,7 @@ class ArtisticPortfolio {
             contact: null,
             projects: []
         };
-        
+
         this.cameras = {
             hero: null,
             about: null,
@@ -29,7 +29,7 @@ class ArtisticPortfolio {
             contact: null,
             projects: []
         };
-        
+
         this.renderers = {
             hero: null,
             about: null,
@@ -67,7 +67,7 @@ class ArtisticPortfolio {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-        
+
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.shadowMap.enabled = true;
@@ -93,10 +93,10 @@ class ArtisticPortfolio {
 
         // Complex blockchain network visualization
         this.createAdvancedBlockchainNetwork(scene);
-        
+
         // Particle field background
         this.createAdvancedParticleField(scene);
-        
+
         // Floating geometric shapes
         this.createFloatingGeometry(scene);
 
@@ -112,11 +112,11 @@ class ArtisticPortfolio {
 
     createAdvancedBlockchainNetwork(scene) {
         const group = new THREE.Group();
-        
+
         // Create complex node network
         const nodes = [];
         const nodeGeometry = new THREE.IcosahedronGeometry(0.8, 2);
-        
+
         // Shader material for nodes
         const vertexShader = `
             varying vec3 vPosition;
@@ -150,7 +150,7 @@ class ArtisticPortfolio {
 
         // Create interconnected nodes
         const nodePositions = [
-            [0, 3, 0], [4, 1, 2], [-4, 1, -2], [2, -2, 3], 
+            [0, 3, 0], [4, 1, 2], [-4, 1, -2], [2, -2, 3],
             [-3, -1, 1], [1, 1, -4], [-1, 4, 1], [3, -3, -1],
             [0, 0, 5], [-2, 2, -3]
         ];
@@ -177,7 +177,7 @@ class ArtisticPortfolio {
 
         // Create animated connections
         this.createAnimatedConnections(group, nodes);
-        
+
         // Add data streams
         this.createDataStreams(group, nodes);
 
@@ -188,14 +188,14 @@ class ArtisticPortfolio {
 
     createAnimatedConnections(group, nodes) {
         const connections = [
-            [0, 1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6], 
+            [0, 1], [0, 2], [1, 3], [2, 4], [3, 5], [4, 6],
             [5, 7], [6, 8], [7, 9], [8, 0], [9, 1], [2, 7]
         ];
 
         connections.forEach(([i, j]) => {
             const start = nodes[i].position;
             const end = nodes[j].position;
-            
+
             // Create tube geometry for connections
             const curve = new THREE.CatmullRomCurve3([
                 start.clone(),
@@ -205,14 +205,14 @@ class ArtisticPortfolio {
             ]);
 
             const tubeGeometry = new THREE.TubeGeometry(curve, 20, 0.05, 8, false);
-            const tubeMaterial = new THREE.MeshBasicMaterial({ 
-                color: 0x818cf8, 
-                transparent: true, 
+            const tubeMaterial = new THREE.MeshBasicMaterial({
+                color: 0x818cf8,
+                transparent: true,
                 opacity: 0.6,
                 emissive: 0x6366f1,
                 emissiveIntensity: 0.2
             });
-            
+
             const tube = new THREE.Mesh(tubeGeometry, tubeMaterial);
             tube.userData = { type: 'connection', curve };
             group.add(tube);
@@ -223,21 +223,21 @@ class ArtisticPortfolio {
         // Create flowing data particles along connections
         const particleCount = 200;
         const particleGeometry = new THREE.SphereGeometry(0.03, 8, 8);
-        
+
         for (let i = 0; i < particleCount; i++) {
-            const material = new THREE.MeshBasicMaterial({ 
+            const material = new THREE.MeshBasicMaterial({
                 color: new THREE.Color().setHSL(Math.random(), 0.8, 0.8),
                 transparent: true,
                 opacity: 0.8
             });
-            
+
             const particle = new THREE.Mesh(particleGeometry, material);
-            particle.userData = { 
+            particle.userData = {
                 speed: 0.01 + Math.random() * 0.02,
                 path: Math.floor(Math.random() * nodes.length),
                 progress: Math.random()
             };
-            
+
             group.add(particle);
         }
     }
@@ -250,19 +250,19 @@ class ArtisticPortfolio {
 
         for (let i = 0; i < particleCount; i++) {
             const i3 = i * 3;
-            
+
             // Position
             positions[i3] = (Math.random() - 0.5) * 100;
             positions[i3 + 1] = (Math.random() - 0.5) * 100;
             positions[i3 + 2] = (Math.random() - 0.5) * 100;
-            
+
             // Color
             const color = new THREE.Color();
             color.setHSL(Math.random() * 0.3 + 0.6, 0.8, 0.6);
             colors[i3] = color.r;
             colors[i3 + 1] = color.g;
             colors[i3 + 2] = color.b;
-            
+
             // Size
             sizes[i] = Math.random() * 2 + 0.5;
         }
@@ -283,13 +283,13 @@ class ArtisticPortfolio {
 
         const particles = new THREE.Points(particleGeometry, particleMaterial);
         scene.add(particles);
-        
+
         this.heroParticles = particles;
     }
 
     createFloatingGeometry(scene) {
         const group = new THREE.Group();
-        
+
         // Create various floating geometric shapes
         const geometries = [
             new THREE.TetrahedronGeometry(1, 2),
@@ -316,7 +316,7 @@ class ArtisticPortfolio {
                 (Math.random() - 0.5) * 30,
                 (Math.random() - 0.5) * 20
             );
-            
+
             mesh.userData = {
                 rotationSpeed: {
                     x: (Math.random() - 0.5) * 0.02,
@@ -343,7 +343,7 @@ class ArtisticPortfolio {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-        
+
         const container = canvas.parentElement;
         const rect = container.getBoundingClientRect();
         renderer.setSize(rect.width, rect.height);
@@ -381,12 +381,12 @@ class ArtisticPortfolio {
             const y = (i / segments) * height - height / 2;
             const angle1 = (i / segments) * Math.PI * 10;
             const angle2 = angle1 + Math.PI;
-            
+
             const x1 = Math.cos(angle1) * radius;
             const z1 = Math.sin(angle1) * radius;
             const x2 = Math.cos(angle2) * radius;
             const z2 = Math.sin(angle2) * radius;
-            
+
             helix1Points.push(new THREE.Vector3(x1, y, z1));
             helix2Points.push(new THREE.Vector3(x2, y, z2));
         }
@@ -428,39 +428,39 @@ class ArtisticPortfolio {
         for (let i = 0; i < segments; i += 10) {
             const start = helix1Points[i];
             const end = helix2Points[i];
-            
+
             const rungGeometry = new THREE.CylinderGeometry(0.05, 0.05, start.distanceTo(end), 8);
             const rungMaterial = new THREE.MeshBasicMaterial({ color: 0x818cf8, transparent: true, opacity: 0.6 });
             const rung = new THREE.Mesh(rungGeometry, rungMaterial);
-            
+
             rung.position.copy(start.clone().lerp(end, 0.5));
             rung.lookAt(end);
             rung.rotateX(Math.PI / 2);
-            
+
             group.add(rung);
         }
 
         // Add floating data nodes
         for (let i = 0; i < 20; i++) {
             const nodeGeometry = new THREE.SphereGeometry(0.2, 16, 16);
-            const nodeMaterial = new THREE.MeshBasicMaterial({ 
+            const nodeMaterial = new THREE.MeshBasicMaterial({
                 color: new THREE.Color().setHSL(Math.random(), 0.8, 0.8),
                 transparent: true,
                 opacity: 0.8
             });
-            
+
             const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
             node.position.set(
                 (Math.random() - 0.5) * 12,
                 (Math.random() - 0.5) * height,
                 (Math.random() - 0.5) * 12
             );
-            
+
             node.userData = {
                 floatSpeed: Math.random() * 0.02 + 0.01,
                 rotationSpeed: Math.random() * 0.05 + 0.02
             };
-            
+
             group.add(node);
         }
 
@@ -476,10 +476,21 @@ class ArtisticPortfolio {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-        
+
         const container = canvas.parentElement;
-        const rect = container.getBoundingClientRect();
-        renderer.setSize(rect.width, rect.height);
+        const updateSize = () => {
+            const rect = container.getBoundingClientRect();
+            const width = rect.width;
+            const height = Math.max(rect.height, 600); // Ensure minimum height
+            
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        };
+        
+        updateSize();
+        window.addEventListener('resize', updateSize);
+        
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
         // Create 3D skill network
@@ -488,7 +499,7 @@ class ArtisticPortfolio {
         const ambientLight = new THREE.AmbientLight(0x6366f1, 0.8);
         scene.add(ambientLight);
 
-        camera.position.z = 15;
+        camera.position.z = 12; // Moved closer for better visibility
 
         this.scenes.skills = scene;
         this.cameras.skills = camera;
@@ -497,7 +508,7 @@ class ArtisticPortfolio {
 
     createSkillNetwork3D(scene) {
         const group = new THREE.Group();
-        
+
         // Define skills with 3D positions and specific geometries
         const skills = [
             { name: 'Solidity', position: [0, 3, 0], color: 0x6366f1, connections: [1, 2, 3], shape: 'diamond' },
@@ -523,9 +534,9 @@ class ArtisticPortfolio {
         // Create skill nodes with custom geometries
         skills.forEach((skill, index) => {
             let geometry;
-            
+
             // Custom geometry based on skill type
-            switch(skill.shape) {
+            switch (skill.shape) {
                 case 'diamond': // Ethereum/Solidity
                     geometry = new THREE.OctahedronGeometry(0.5, 1);
                     break;
@@ -574,14 +585,14 @@ class ArtisticPortfolio {
 
             const node = new THREE.Mesh(geometry, material);
             node.position.set(...skill.position);
-            node.userData = { 
-                skill: skill.name, 
+            node.userData = {
+                skill: skill.name,
                 index,
                 originalPosition: new THREE.Vector3(...skill.position),
                 pulsing: false,
                 shape: skill.shape
             };
-            
+
             nodes.push(node);
             group.add(node);
 
@@ -624,17 +635,17 @@ class ArtisticPortfolio {
 
         group.add(sprite);
     }
-    
+
     createEnhancedSkillLabel(group, text, position, color) {
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
         canvas.width = 300;
         canvas.height = 80;
-        
+
         // Background with rounded rectangle
         context.fillStyle = `rgba(${(color >> 16) & 255}, ${(color >> 8) & 255}, ${color & 255}, 0.8)`;
         context.fillRect(10, 10, 280, 60);
-        
+
         // Text
         context.fillStyle = '#ffffff';
         context.font = 'Bold 24px "JetBrains Mono", monospace';
@@ -644,9 +655,9 @@ class ArtisticPortfolio {
         context.fillText(text, 150, 50);
 
         const texture = new THREE.CanvasTexture(canvas);
-        const spriteMaterial = new THREE.SpriteMaterial({ 
-            map: texture, 
-            transparent: true, 
+        const spriteMaterial = new THREE.SpriteMaterial({
+            map: texture,
+            transparent: true,
             opacity: 0.9,
             alphaTest: 0.1
         });
@@ -661,19 +672,19 @@ class ArtisticPortfolio {
     createDynamicConnection(group, start, end) {
         const points = [start.clone(), end.clone()];
         const geometry = new THREE.BufferGeometry().setFromPoints(points);
-        
-        const material = new THREE.LineBasicMaterial({ 
+
+        const material = new THREE.LineBasicMaterial({
             color: 0x818cf8,
             transparent: true,
             opacity: 0.4,
             linewidth: 2
         });
-        
+
         const line = new THREE.Line(geometry, material);
         line.userData = { type: 'connection' };
         group.add(line);
     }
-    
+
     createEnhancedConnection(group, start, end, color) {
         // Create animated tube connections
         const curve = new THREE.CatmullRomCurve3([
@@ -684,18 +695,18 @@ class ArtisticPortfolio {
         ]);
 
         const tubeGeometry = new THREE.TubeGeometry(curve, 20, 0.03, 8, false);
-        const tubeMaterial = new THREE.MeshBasicMaterial({ 
+        const tubeMaterial = new THREE.MeshBasicMaterial({
             color: color,
-            transparent: true, 
+            transparent: true,
             opacity: 0.6,
             emissive: color,
             emissiveIntensity: 0.2
         });
-        
+
         const tube = new THREE.Mesh(tubeGeometry, tubeMaterial);
         tube.userData = { type: 'enhanced_connection', curve, color };
         group.add(tube);
-        
+
         // Add data flow particles
         for (let i = 0; i < 3; i++) {
             const particleGeometry = new THREE.SphereGeometry(0.02, 8, 8);
@@ -705,7 +716,7 @@ class ArtisticPortfolio {
                 emissiveIntensity: 0.8
             });
             const particle = new THREE.Mesh(particleGeometry, particleMaterial);
-            particle.userData = { 
+            particle.userData = {
                 type: 'flow_particle',
                 curve: curve,
                 progress: i * 0.33,
@@ -723,7 +734,7 @@ class ArtisticPortfolio {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-        
+
         const container = canvas.parentElement;
         const rect = container.getBoundingClientRect();
         renderer.setSize(rect.width, rect.height);
@@ -744,7 +755,7 @@ class ArtisticPortfolio {
 
     createHolographicNetwork(scene) {
         const group = new THREE.Group();
-        
+
         // Create holographic globe
         const globeGeometry = new THREE.SphereGeometry(3, 64, 64);
         const globeMaterial = new THREE.MeshBasicMaterial({
@@ -760,38 +771,38 @@ class ArtisticPortfolio {
         for (let i = 0; i < 100; i++) {
             const phi = Math.random() * Math.PI * 2;
             const theta = Math.random() * Math.PI;
-            
+
             const x = 3 * Math.sin(theta) * Math.cos(phi);
             const y = 3 * Math.cos(theta);
             const z = 3 * Math.sin(theta) * Math.sin(phi);
 
             const pointGeometry = new THREE.SphereGeometry(0.05, 8, 8);
-            const pointMaterial = new THREE.MeshBasicMaterial({ 
+            const pointMaterial = new THREE.MeshBasicMaterial({
                 color: new THREE.Color().setHSL(Math.random() * 0.3 + 0.6, 0.8, 0.8),
                 transparent: true,
                 opacity: 0.8
             });
-            
+
             const point = new THREE.Mesh(pointGeometry, pointMaterial);
             point.position.set(x, y, z);
-            point.userData = { 
+            point.userData = {
                 pulseSpeed: Math.random() * 0.02 + 0.01,
                 originalScale: point.scale.clone()
             };
-            
+
             group.add(point);
         }
 
         // Create orbital rings with different orientations
         const ringGeometry = new THREE.TorusGeometry(4, 0.05, 8, 100);
-        
+
         const ring1 = new THREE.Mesh(ringGeometry, new THREE.MeshBasicMaterial({ color: 0x6366f1, transparent: true, opacity: 0.6 }));
         const ring2 = new THREE.Mesh(ringGeometry, new THREE.MeshBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.6 }));
         const ring3 = new THREE.Mesh(ringGeometry, new THREE.MeshBasicMaterial({ color: 0x10b981, transparent: true, opacity: 0.6 }));
-        
+
         ring2.rotation.x = Math.PI / 2;
         ring3.rotation.y = Math.PI / 2;
-        
+
         group.add(ring1, ring2, ring3);
 
         // Add communication satellites
@@ -799,15 +810,15 @@ class ArtisticPortfolio {
             const satGeometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
             const satMaterial = new THREE.MeshBasicMaterial({ color: 0xf59e0b });
             const satellite = new THREE.Mesh(satGeometry, satMaterial);
-            
+
             const angle = (i / 6) * Math.PI * 2;
             satellite.position.set(Math.cos(angle) * 6, Math.sin(angle) * 2, Math.sin(angle) * 6);
-            satellite.userData = { 
+            satellite.userData = {
                 orbitSpeed: 0.01,
                 orbitRadius: 6,
                 orbitAngle: angle
             };
-            
+
             group.add(satellite);
         }
 
@@ -818,22 +829,142 @@ class ArtisticPortfolio {
 
     // Advanced Project Scenes
     setupAdvancedProjectScenes() {
-        // Remove canvas elements and replace with GitHub logo placeholders
-        const projectCanvases = document.querySelectorAll('.project-canvas');
+        const projectCards = document.querySelectorAll('.project-card');
         
-        projectCanvases.forEach((canvas, index) => {
-            // Replace canvas with GitHub logo
-            const githubContainer = document.createElement('div');
-            githubContainer.className = 'github-logo-container';
-            githubContainer.innerHTML = `
-                <svg width="120" height="120" viewBox="0 0 24 24" fill="currentColor" class="github-logo">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-            `;
+        projectCards.forEach((card, index) => {
+            const canvas = card.querySelector('.project-canvas');
+            if (!canvas) return;
+
+            const projectType = card.getAttribute('data-project');
             
-            // Replace the canvas with the GitHub logo
-            canvas.parentNode.replaceChild(githubContainer, canvas);
+            // Create simple animated background for each project
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+            
+            const rect = canvas.getBoundingClientRect();
+            renderer.setSize(rect.width, rect.height);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            // Create project-specific visualization
+            this.createProjectVisualization(scene, projectType);
+            
+            camera.position.z = 5;
+            
+            // Store for animation
+            this.scenes.projects[index] = scene;
+            this.cameras.projects[index] = camera;
+            this.renderers.projects[index] = renderer;
         });
+    }
+
+    createProjectVisualization(scene, projectType) {
+        const group = new THREE.Group();
+        
+        switch(projectType) {
+            case 'ambit':
+                this.createAmbitVisualization(group);
+                break;
+            case 'kairo':
+                this.createKairoVisualization(group);
+                break;
+            case 'typenad':
+                this.createTypenadVisualization(group);
+                break;
+            case 'lottery':
+                this.createLotteryVisualization(group);
+                break;
+            default:
+                this.createDefaultVisualization(group);
+        }
+        
+        scene.add(group);
+        
+        // Add lighting
+        const ambientLight = new THREE.AmbientLight(0x6366f1, 0.6);
+        scene.add(ambientLight);
+        
+        const pointLight = new THREE.PointLight(0xf59e0b, 1, 10);
+        pointLight.position.set(2, 2, 2);
+        scene.add(pointLight);
+    }
+
+    createAmbitVisualization(group) {
+        // Morpho Blue inspired design with yield curves
+        const curveGeometry = new THREE.TorusGeometry(1, 0.1, 8, 16);
+        const curveMaterial = new THREE.MeshPhongMaterial({ color: 0x6366f1 });
+        const curve = new THREE.Mesh(curveGeometry, curveMaterial);
+        curve.rotation.x = Math.PI / 4;
+        group.add(curve);
+        
+        // Floating coins
+        for(let i = 0; i < 5; i++) {
+            const coinGeometry = new THREE.CylinderGeometry(0.2, 0.2, 0.05, 16);
+            const coinMaterial = new THREE.MeshPhongMaterial({ color: 0xf59e0b });
+            const coin = new THREE.Mesh(coinGeometry, coinMaterial);
+            coin.position.set(
+                (Math.random() - 0.5) * 3,
+                (Math.random() - 0.5) * 2,
+                (Math.random() - 0.5) * 2
+            );
+            group.add(coin);
+        }
+    }
+
+    createKairoVisualization(group) {
+        // Circuit breaker visualization
+        const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
+        const boxMaterial = new THREE.MeshPhongMaterial({ color: 0xff6b35 });
+        const box = new THREE.Mesh(boxGeometry, boxMaterial);
+        group.add(box);
+        
+        // Protective rings
+        for(let i = 0; i < 3; i++) {
+            const ringGeometry = new THREE.TorusGeometry(1.5 + i * 0.3, 0.05, 8, 16);
+            const ringMaterial = new THREE.MeshPhongMaterial({ color: 0x10b981 });
+            const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+            ring.rotation.x = Math.PI / 2;
+            group.add(ring);
+        }
+    }
+
+    createTypenadVisualization(group) {
+        // Keyboard keys floating
+        for(let i = 0; i < 8; i++) {
+            const keyGeometry = new THREE.BoxGeometry(0.3, 0.3, 0.1);
+            const keyMaterial = new THREE.MeshPhongMaterial({ color: 0x9945ff });
+            const key = new THREE.Mesh(keyGeometry, keyMaterial);
+            key.position.set(
+                (i % 4 - 1.5) * 0.5,
+                Math.floor(i / 4) * 0.5 - 0.25,
+                0
+            );
+            group.add(key);
+        }
+    }
+
+    createLotteryVisualization(group) {
+        // Lottery balls
+        for(let i = 0; i < 6; i++) {
+            const ballGeometry = new THREE.SphereGeometry(0.2, 16, 16);
+            const ballMaterial = new THREE.MeshPhongMaterial({ 
+                color: [0xff4444, 0x44ff44, 0x4444ff, 0xffff44, 0xff44ff, 0x44ffff][i] 
+            });
+            const ball = new THREE.Mesh(ballGeometry, ballMaterial);
+            ball.position.set(
+                (Math.random() - 0.5) * 2,
+                (Math.random() - 0.5) * 2,
+                (Math.random() - 0.5) * 2
+            );
+            group.add(ball);
+        }
+    }
+
+    createDefaultVisualization(group) {
+        const geometry = new THREE.IcosahedronGeometry(1, 1);
+        const material = new THREE.MeshPhongMaterial({ color: 0x6366f1 });
+        const mesh = new THREE.Mesh(geometry, material);
+        group.add(mesh);
     }
 
     // Removed - project visualizations now use GitHub logos
@@ -849,7 +980,7 @@ class ArtisticPortfolio {
         });
         const base = new THREE.Mesh(baseGeometry, baseMaterial);
         base.position.y = -1;
-        
+
         // Glass dome
         const domeGeometry = new THREE.SphereGeometry(2.2, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2);
         const domeMaterial = new THREE.MeshPhysicalMaterial({
@@ -863,13 +994,13 @@ class ArtisticPortfolio {
         });
         const dome = new THREE.Mesh(domeGeometry, domeMaterial);
         dome.position.y = 0.5;
-        
+
         // Lottery balls with numbers
         const ballGroup = new THREE.Group();
         const ballColors = [0xff4444, 0x44ff44, 0x4444ff, 0xffff44, 0xff44ff, 0x44ffff];
         for (let i = 0; i < 20; i++) {
             const ballGeometry = new THREE.SphereGeometry(0.15, 16, 16);
-            const ballMaterial = new THREE.MeshPhysicalMaterial({ 
+            const ballMaterial = new THREE.MeshPhysicalMaterial({
                 color: ballColors[i % ballColors.length],
                 metalness: 0.1,
                 roughness: 0.2,
@@ -877,19 +1008,19 @@ class ArtisticPortfolio {
                 clearcoatRoughness: 0.1
             });
             const ball = new THREE.Mesh(ballGeometry, ballMaterial);
-            
+
             // Random position inside dome
             const phi = Math.random() * Math.PI * 2;
             const theta = Math.random() * Math.PI * 0.5;
             const radius = Math.random() * 1.5 + 0.5;
-            
+
             ball.position.set(
                 radius * Math.sin(theta) * Math.cos(phi),
                 Math.random() * 2 - 0.5,
                 radius * Math.sin(theta) * Math.sin(phi)
             );
-            
-            ball.userData = { 
+
+            ball.userData = {
                 velocity: new THREE.Vector3(
                     (Math.random() - 0.5) * 0.02,
                     Math.random() * 0.01,
@@ -898,10 +1029,10 @@ class ArtisticPortfolio {
                 bounceSpeed: Math.random() * 0.02 + 0.01,
                 number: i + 1
             };
-            
+
             ballGroup.add(ball);
         }
-        
+
         // Winner display panel
         const panelGeometry = new THREE.PlaneGeometry(1.5, 0.8);
         const panelMaterial = new THREE.MeshBasicMaterial({
@@ -911,7 +1042,7 @@ class ArtisticPortfolio {
         });
         const panel = new THREE.Mesh(panelGeometry, panelMaterial);
         panel.position.set(0, -2.5, 2.5);
-        
+
         // LED number displays
         for (let i = 0; i < 3; i++) {
             const ledGeometry = new THREE.PlaneGeometry(0.3, 0.4);
@@ -935,7 +1066,7 @@ class ArtisticPortfolio {
         const oracle = new THREE.Mesh(oracleGeometry, oracleMaterial);
         oracle.position.set(2.5, 1, 0);
         oracle.rotation.y = Math.PI / 4;
-        
+
         group.add(base, dome, ballGroup, panel, oracle);
         group.userData = { base, dome, ballGroup, oracle };
     }
@@ -944,24 +1075,24 @@ class ArtisticPortfolio {
         const particleCount = 200;
         const positions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
-        
+
         for (let i = 0; i < particleCount; i++) {
             const i3 = i * 3;
             positions[i3] = (Math.random() - 0.5) * 10;
             positions[i3 + 1] = (Math.random() - 0.5) * 10;
             positions[i3 + 2] = (Math.random() - 0.5) * 5;
-            
+
             const color = new THREE.Color();
             color.setHSL(Math.random() * 0.3 + 0.6, 0.8, 0.6);
             colors[i3] = color.r;
             colors[i3 + 1] = color.g;
             colors[i3 + 2] = color.b;
         }
-        
+
         const geometry = new THREE.BufferGeometry();
         geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-        
+
         const material = new THREE.PointsMaterial({
             size: 0.05,
             vertexColors: true,
@@ -969,7 +1100,7 @@ class ArtisticPortfolio {
             opacity: 0.8,
             blending: THREE.AdditiveBlending
         });
-        
+
         const particles = new THREE.Points(geometry, material);
         group.add(particles);
     }
@@ -977,25 +1108,25 @@ class ArtisticPortfolio {
     createCrossChainVisualization3D(group) {
         // Ethereum chain (left side)
         const ethChain = this.createEthereumChain(-3);
-        
+
         // Polygon chain (right side)  
         const polygonChain = this.createPolygonChain(3);
-        
+
         // NFT token in center
         const nftGroup = this.createNFTToken();
-        
+
         // CCIP bridge with animated data packets
         this.createCCIPBridge(group);
-        
+
         // Burn and mint visualization
         this.createBurnMintAnimation(group);
-        
+
         group.add(ethChain, polygonChain, nftGroup);
     }
 
     createEthereumChain(xOffset) {
         const chainGroup = new THREE.Group();
-        
+
         // Ethereum logo representation (diamond shape)
         const ethGeometry = new THREE.OctahedronGeometry(0.8);
         const ethMaterial = new THREE.MeshPhysicalMaterial({
@@ -1007,7 +1138,7 @@ class ArtisticPortfolio {
         });
         const ethLogo = new THREE.Mesh(ethGeometry, ethMaterial);
         ethLogo.position.set(xOffset, 2, 0);
-        
+
         // Chain blocks
         for (let i = 0; i < 3; i++) {
             const blockGeometry = new THREE.BoxGeometry(1, 0.8, 1);
@@ -1022,14 +1153,14 @@ class ArtisticPortfolio {
             block.position.set(xOffset, i * 1.2 - 1, 0);
             chainGroup.add(block);
         }
-        
+
         chainGroup.add(ethLogo);
         return chainGroup;
     }
-    
+
     createPolygonChain(xOffset) {
         const chainGroup = new THREE.Group();
-        
+
         // Polygon logo representation (multi-sided shape)
         const polyGeometry = new THREE.IcosahedronGeometry(0.8);
         const polyMaterial = new THREE.MeshPhysicalMaterial({
@@ -1041,7 +1172,7 @@ class ArtisticPortfolio {
         });
         const polyLogo = new THREE.Mesh(polyGeometry, polyMaterial);
         polyLogo.position.set(xOffset, 2, 0);
-        
+
         // Chain blocks
         for (let i = 0; i < 3; i++) {
             const blockGeometry = new THREE.BoxGeometry(1, 0.8, 1);
@@ -1056,14 +1187,14 @@ class ArtisticPortfolio {
             block.position.set(xOffset, i * 1.2 - 1, 0);
             chainGroup.add(block);
         }
-        
+
         chainGroup.add(polyLogo);
         return chainGroup;
     }
-    
+
     createNFTToken() {
         const nftGroup = new THREE.Group();
-        
+
         // NFT frame
         const frameGeometry = new THREE.RingGeometry(0.8, 1, 4);
         const frameMaterial = new THREE.MeshPhysicalMaterial({
@@ -1075,7 +1206,7 @@ class ArtisticPortfolio {
         });
         const frame = new THREE.Mesh(frameGeometry, frameMaterial);
         frame.rotation.x = Math.PI / 4;
-        
+
         // NFT artwork (colorful plane)
         const artGeometry = new THREE.PlaneGeometry(1.4, 1.4);
         const artMaterial = new THREE.MeshBasicMaterial({
@@ -1085,12 +1216,12 @@ class ArtisticPortfolio {
         });
         const artwork = new THREE.Mesh(artGeometry, artMaterial);
         artwork.position.z = -0.1;
-        
+
         nftGroup.add(frame, artwork);
         nftGroup.position.y = 0.5;
         return nftGroup;
     }
-    
+
     createCCIPBridge(group) {
         // Chainlink CCIP bridge representation
         const bridgeGeometry = new THREE.CylinderGeometry(0.1, 0.1, 6, 12);
@@ -1104,7 +1235,7 @@ class ArtisticPortfolio {
         const bridge = new THREE.Mesh(bridgeGeometry, bridgeMaterial);
         bridge.rotation.z = Math.PI / 2;
         bridge.position.y = 0.5;
-        
+
         // CCIP logo elements (interconnected links)
         for (let i = 0; i < 5; i++) {
             const linkGeometry = new THREE.TorusGeometry(0.2, 0.05, 8, 16);
@@ -1118,10 +1249,10 @@ class ArtisticPortfolio {
             link.rotation.x = Math.PI / 2;
             group.add(link);
         }
-        
+
         group.add(bridge);
     }
-    
+
     createBurnMintAnimation(group) {
         // Burn effect (left side - red particles)
         for (let i = 0; i < 10; i++) {
@@ -1136,7 +1267,7 @@ class ArtisticPortfolio {
             burnParticle.userData = { type: 'burn', speed: 0.02 };
             group.add(burnParticle);
         }
-        
+
         // Mint effect (right side - green particles)
         for (let i = 0; i < 10; i++) {
             const mintGeometry = new THREE.SphereGeometry(0.05, 8, 8);
@@ -1154,7 +1285,7 @@ class ArtisticPortfolio {
 
     createCrossChainBridge(group, chain1, chain2) {
         const bridgeGeometry = new THREE.CylinderGeometry(0.1, 0.1, 6, 12);
-        const bridgeMaterial = new THREE.MeshPhysicalMaterial({ 
+        const bridgeMaterial = new THREE.MeshPhysicalMaterial({
             color: 0x10b981,
             transparent: true,
             opacity: 0.8,
@@ -1163,24 +1294,24 @@ class ArtisticPortfolio {
         });
         const bridge = new THREE.Mesh(bridgeGeometry, bridgeMaterial);
         bridge.rotation.z = Math.PI / 2;
-        
+
         // Add data flow particles
         this.createDataFlowParticles(group);
-        
+
         group.add(bridge);
     }
 
     createDataFlowParticles(group) {
         for (let i = 0; i < 20; i++) {
             const particleGeometry = new THREE.SphereGeometry(0.05, 8, 8);
-            const particleMaterial = new THREE.MeshBasicMaterial({ 
+            const particleMaterial = new THREE.MeshBasicMaterial({
                 color: 0x10b981,
                 transparent: true,
                 opacity: 0.8
             });
             const particle = new THREE.Mesh(particleGeometry, particleMaterial);
             particle.position.set(-3 + (i / 20) * 6, 0, 0);
-            particle.userData = { 
+            particle.userData = {
                 flowSpeed: 0.02,
                 direction: 1
             };
@@ -1191,13 +1322,13 @@ class ArtisticPortfolio {
     createFundMeVisualization3D(group) {
         // Create 3D funding visualization with animated coins
         const targetGeometry = new THREE.TorusGeometry(2, 0.1, 8, 50);
-        const targetMaterial = new THREE.MeshBasicMaterial({ 
+        const targetMaterial = new THREE.MeshBasicMaterial({
             color: 0x6366f1,
             transparent: true,
             opacity: 0.6
         });
         const target = new THREE.Mesh(targetGeometry, targetMaterial);
-        
+
         // Create coins with realistic materials
         for (let i = 0; i < 12; i++) {
             const coinGeometry = new THREE.CylinderGeometry(0.3, 0.3, 0.1, 16);
@@ -1208,7 +1339,7 @@ class ArtisticPortfolio {
                 clearcoat: 1
             });
             const coin = new THREE.Mesh(coinGeometry, coinMaterial);
-            
+
             coin.position.set(
                 (Math.random() - 0.5) * 4,
                 (Math.random() - 0.5) * 4,
@@ -1216,15 +1347,15 @@ class ArtisticPortfolio {
             );
             coin.rotation.x = Math.random() * Math.PI;
             coin.rotation.z = Math.random() * Math.PI;
-            
+
             coin.userData = {
                 rotationSpeed: Math.random() * 0.05 + 0.02,
                 floatSpeed: Math.random() * 0.01 + 0.005
             };
-            
+
             group.add(coin);
         }
-        
+
         group.add(target);
     }
 
@@ -1237,7 +1368,7 @@ class ArtisticPortfolio {
             roughness: 0.3
         });
         const breaker = new THREE.Mesh(breakerGeometry, breakerMaterial);
-        
+
         // Create switch
         const switchGeometry = new THREE.BoxGeometry(0.5, 1, 0.2);
         const switchMaterial = new THREE.MeshPhysicalMaterial({
@@ -1247,10 +1378,10 @@ class ArtisticPortfolio {
         });
         const switchMesh = new THREE.Mesh(switchGeometry, switchMaterial);
         switchMesh.position.set(0, 0.5, 0.6);
-        
+
         // Add electrical arcs
         this.createElectricalArcs(group);
-        
+
         group.add(breaker, switchMesh);
         group.userData = { breaker, switch: switchMesh };
     }
@@ -1260,7 +1391,7 @@ class ArtisticPortfolio {
             const arcPoints = [];
             const startPoint = new THREE.Vector3(-1, Math.random() * 2 - 1, 0.5);
             const endPoint = new THREE.Vector3(1, Math.random() * 2 - 1, 0.5);
-            
+
             // Create jagged arc
             const segments = 10;
             for (let j = 0; j <= segments; j++) {
@@ -1270,19 +1401,19 @@ class ArtisticPortfolio {
                 point.z += (Math.random() - 0.5) * 0.2;
                 arcPoints.push(point);
             }
-            
+
             const arcGeometry = new THREE.BufferGeometry().setFromPoints(arcPoints);
-            const arcMaterial = new THREE.LineBasicMaterial({ 
+            const arcMaterial = new THREE.LineBasicMaterial({
                 color: 0x60a5fa,
                 transparent: true,
                 opacity: 0.8
             });
             const arc = new THREE.Line(arcGeometry, arcMaterial);
-            arc.userData = { 
+            arc.userData = {
                 flickerSpeed: Math.random() * 0.1 + 0.05,
                 originalOpacity: 0.8
             };
-            
+
             group.add(arc);
         }
     }
@@ -1298,7 +1429,7 @@ class ArtisticPortfolio {
             opacity: 0.8
         });
         const base = new THREE.Mesh(baseGeometry, baseMaterial);
-        
+
         // Create trading pairs as orbiting objects
         const tradingPairs = ['SOL/USDC', 'SOL/ETH', 'RAY/SOL', 'SRM/USDC'];
         tradingPairs.forEach((pair, index) => {
@@ -1309,20 +1440,20 @@ class ArtisticPortfolio {
                 roughness: 0.3
             });
             const pairSphere = new THREE.Mesh(pairGeometry, pairMaterial);
-            
+
             const angle = (index / tradingPairs.length) * Math.PI * 2;
             pairSphere.position.set(Math.cos(angle) * 3, 1, Math.sin(angle) * 3);
-            pairSphere.userData = { 
+            pairSphere.userData = {
                 orbitAngle: angle,
                 orbitSpeed: 0.01 + Math.random() * 0.01
             };
-            
+
             group.add(pairSphere);
         });
-        
+
         // Add volume visualization
         this.createVolumeVisualization(group);
-        
+
         group.add(base);
     }
 
@@ -1335,18 +1466,18 @@ class ArtisticPortfolio {
                 opacity: 0.7
             });
             const bar = new THREE.Mesh(barGeometry, barMaterial);
-            
+
             bar.position.set(
                 (Math.random() - 0.5) * 8,
                 bar.geometry.parameters.height / 2,
                 (Math.random() - 0.5) * 8
             );
-            
-            bar.userData = { 
+
+            bar.userData = {
                 growthSpeed: Math.random() * 0.02 + 0.01,
                 maxHeight: bar.geometry.parameters.height
             };
-            
+
             group.add(bar);
         }
     }
@@ -1361,7 +1492,7 @@ class ArtisticPortfolio {
             clearcoat: 1
         });
         const breakerMesh = new THREE.Mesh(mainBreaker, breakerMaterial);
-        
+
         // Aegis Labs logo simulation
         const logoGeometry = new THREE.CylinderGeometry(0.8, 0.8, 0.1, 16);
         const logoMaterial = new THREE.MeshPhysicalMaterial({
@@ -1373,29 +1504,29 @@ class ArtisticPortfolio {
         });
         const logo = new THREE.Mesh(logoGeometry, logoMaterial);
         logo.position.set(0, 0, 0.8);
-        
+
         // Circuit patterns
         this.createAdvancedCircuitPattern(group);
-        
+
         // Production indicator lights
         for (let i = 0; i < 6; i++) {
             const lightGeometry = new THREE.SphereGeometry(0.1, 16, 16);
-            const lightMaterial = new THREE.MeshBasicMaterial({ 
+            const lightMaterial = new THREE.MeshBasicMaterial({
                 color: i < 4 ? 0x00ff00 : 0xff4444,
                 emissive: i < 4 ? 0x00ff00 : 0xff4444,
                 emissiveIntensity: 0.8
             });
             const light = new THREE.Mesh(lightGeometry, lightMaterial);
             light.position.set(-1.2 + (i * 0.4), 1.5, 0.8);
-            
-            light.userData = { 
+
+            light.userData = {
                 pulseSpeed: 0.02 + Math.random() * 0.03,
                 originalIntensity: 0.8
             };
-            
+
             group.add(light);
         }
-        
+
         group.add(breakerMesh, logo);
         group.userData = { breaker: breakerMesh, logo };
     }
@@ -1413,7 +1544,7 @@ class ArtisticPortfolio {
         const solanaLogo = new THREE.Mesh(solanaGeometry, solanaMaterial);
         solanaLogo.position.y = 2.5;
         solanaLogo.scale.set(0.8, 0.8, 0.8);
-        
+
         // Lending vault (central structure)
         const vaultGeometry = new THREE.CylinderGeometry(1.5, 1.8, 1.5, 8);
         const vaultMaterial = new THREE.MeshPhysicalMaterial({
@@ -1424,13 +1555,13 @@ class ArtisticPortfolio {
         });
         const vault = new THREE.Mesh(vaultGeometry, vaultMaterial);
         vault.position.y = 0;
-        
+
         // Lending pools (connected nodes)
         const poolPositions = [
             [-2, 1, 0], [2, 1, 0], [0, 1, -2], [0, 1, 2],
             [-1.5, 0.5, 1.5], [1.5, 0.5, -1.5], [-1.5, 0.5, -1.5], [1.5, 0.5, 1.5]
         ];
-        
+
         poolPositions.forEach((pos, index) => {
             // Pool node
             const poolGeometry = new THREE.IcosahedronGeometry(0.4, 1);
@@ -1443,7 +1574,7 @@ class ArtisticPortfolio {
             });
             const pool = new THREE.Mesh(poolGeometry, poolMaterial);
             pool.position.set(...pos);
-            
+
             // Connection line to vault
             const lineGeometry = new THREE.BufferGeometry().setFromPoints([
                 new THREE.Vector3(...pos),
@@ -1455,16 +1586,16 @@ class ArtisticPortfolio {
                 opacity: 0.6
             });
             const line = new THREE.Line(lineGeometry, lineMaterial);
-            
+
             pool.userData = {
                 orbitAngle: (index / poolPositions.length) * Math.PI * 2,
                 orbitSpeed: 0.01 + Math.random() * 0.005,
                 originalPosition: new THREE.Vector3(...pos)
             };
-            
+
             group.add(pool, line);
         });
-        
+
         // SOL tokens (animated coins)
         for (let i = 0; i < 12; i++) {
             const tokenGeometry = new THREE.CylinderGeometry(0.15, 0.15, 0.05, 16);
@@ -1475,7 +1606,7 @@ class ArtisticPortfolio {
                 clearcoat: 1
             });
             const token = new THREE.Mesh(tokenGeometry, tokenMaterial);
-            
+
             const angle = (i / 12) * Math.PI * 2;
             token.position.set(
                 Math.cos(angle) * 3,
@@ -1487,10 +1618,10 @@ class ArtisticPortfolio {
                 orbitSpeed: 0.02,
                 floatSpeed: 0.03
             };
-            
+
             group.add(token);
         }
-        
+
         // Anchor framework symbol (anchor shape)
         const anchorGeometry = new THREE.CylinderGeometry(0.1, 0.3, 0.8, 8);
         const anchorMaterial = new THREE.MeshPhysicalMaterial({
@@ -1503,10 +1634,10 @@ class ArtisticPortfolio {
         const anchor = new THREE.Mesh(anchorGeometry, anchorMaterial);
         anchor.position.set(-3, 0.5, 0);
         anchor.rotation.z = Math.PI / 6;
-        
+
         // Interest rate displays
         this.createLendingInterestRates(group);
-        
+
         group.add(solanaLogo, vault, anchor);
     }
 
@@ -1523,7 +1654,7 @@ class ArtisticPortfolio {
             emissiveIntensity: 0.1
         });
         const mainCoin = new THREE.Mesh(coinGeometry, coinMaterial);
-        
+
         // Dollar symbol on coin
         const dollarGeometry = new THREE.RingGeometry(0.4, 0.5, 16);
         const dollarMaterial = new THREE.MeshBasicMaterial({
@@ -1534,7 +1665,7 @@ class ArtisticPortfolio {
         const dollarSymbol = new THREE.Mesh(dollarGeometry, dollarMaterial);
         dollarSymbol.position.y = 0.11;
         dollarSymbol.rotation.x = -Math.PI / 2;
-        
+
         // ZK-SNARK proof visualization (cryptographic patterns)
         const zkProofGroup = new THREE.Group();
         for (let i = 0; i < 8; i++) {
@@ -1551,7 +1682,7 @@ class ArtisticPortfolio {
             proof.rotation.x = Math.PI / 2;
             zkProofGroup.add(proof);
         }
-        
+
         // Privacy shield dome
         const shieldGeometry = new THREE.SphereGeometry(2.5, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2);
         const shieldMaterial = new THREE.ShaderMaterial({
@@ -1580,7 +1711,7 @@ class ArtisticPortfolio {
         });
         const shield = new THREE.Mesh(shieldGeometry, shieldMaterial);
         shield.position.y = 1;
-        
+
         // Circom circuit visualization (mathematical nodes)
         for (let i = 0; i < 12; i++) {
             const nodeGeometry = new THREE.IcosahedronGeometry(0.1, 1);
@@ -1590,7 +1721,7 @@ class ArtisticPortfolio {
                 emissiveIntensity: 0.5
             });
             const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
-            
+
             const angle = (i / 12) * Math.PI * 2;
             const height = Math.sin(i * 0.5) * 1.5;
             node.position.set(
@@ -1598,16 +1729,16 @@ class ArtisticPortfolio {
                 height + 1,
                 Math.sin(angle) * 2
             );
-            
+
             node.userData = {
                 orbitAngle: angle,
                 orbitSpeed: 0.01,
                 pulseSpeed: 0.05 + Math.random() * 0.03
             };
-            
+
             group.add(node);
         }
-        
+
         // Privacy transactions (encrypted data streams)
         for (let i = 0; i < 20; i++) {
             const streamGeometry = new THREE.SphereGeometry(0.03, 8, 8);
@@ -1617,13 +1748,13 @@ class ArtisticPortfolio {
                 opacity: 0.8
             });
             const stream = new THREE.Mesh(streamGeometry, streamMaterial);
-            
+
             stream.position.set(
                 (Math.random() - 0.5) * 8,
                 Math.random() * 4,
                 (Math.random() - 0.5) * 8
             );
-            
+
             stream.userData = {
                 velocity: new THREE.Vector3(
                     (Math.random() - 0.5) * 0.02,
@@ -1632,10 +1763,10 @@ class ArtisticPortfolio {
                 ),
                 type: 'privacy'
             };
-            
+
             group.add(stream);
         }
-        
+
         // Regulatory compliance indicator
         const complianceGeometry = new THREE.CylinderGeometry(0.2, 0.2, 0.05, 16);
         const complianceMaterial = new THREE.MeshBasicMaterial({
@@ -1645,11 +1776,11 @@ class ArtisticPortfolio {
         });
         const compliance = new THREE.Mesh(complianceGeometry, complianceMaterial);
         compliance.position.set(2.5, 1.5, 0);
-        
+
         group.add(mainCoin, dollarSymbol, zkProofGroup, shield, compliance);
-        group.userData = { 
-            coin: mainCoin, 
-            zkProofs: zkProofGroup, 
+        group.userData = {
+            coin: mainCoin,
+            zkProofs: zkProofGroup,
             shield,
             shieldMaterial
         };
@@ -1662,20 +1793,20 @@ class ArtisticPortfolio {
             const lineGeometry = new THREE.BoxGeometry(
                 Math.random() * 2 + 0.5, 0.02, 0.02
             );
-            const lineMaterial = new THREE.MeshBasicMaterial({ 
+            const lineMaterial = new THREE.MeshBasicMaterial({
                 color: 0x00ffff,
                 emissive: 0x00ffff,
                 emissiveIntensity: 0.5
             });
             const line = new THREE.Mesh(lineGeometry, lineMaterial);
-            
+
             line.position.set(
                 (Math.random() - 0.5) * 4,
                 (Math.random() - 0.5) * 3,
                 0.8
             );
             line.rotation.z = Math.random() * Math.PI;
-            
+
             patterns.push(line);
             group.add(line);
         }
@@ -1689,12 +1820,12 @@ class ArtisticPortfolio {
             const context = canvas.getContext('2d');
             canvas.width = 128;
             canvas.height = 64;
-            
+
             context.fillStyle = '#14f195';
             context.font = 'Bold 20px Arial';
             context.textAlign = 'center';
             context.fillText(`${(2 + Math.random() * 8).toFixed(1)}%`, 64, 40);
-            
+
             const texture = new THREE.CanvasTexture(canvas);
             const spriteMaterial = new THREE.SpriteMaterial({ map: texture, transparent: true });
             const sprite = new THREE.Sprite(spriteMaterial);
@@ -1704,11 +1835,11 @@ class ArtisticPortfolio {
                 (Math.random() - 0.5) * 5
             );
             sprite.scale.set(1, 0.5, 1);
-            
+
             group.add(sprite);
         }
     }
-    
+
     createLendingInterestRates(group) {
         const rates = ['2.5%', '4.2%', '6.8%', '3.1%', '5.7%'];
         rates.forEach((rate, i) => {
@@ -1716,16 +1847,16 @@ class ArtisticPortfolio {
             const context = canvas.getContext('2d');
             canvas.width = 128;
             canvas.height = 64;
-            
+
             context.fillStyle = '#9945ff';
             context.font = 'Bold 18px Arial';
             context.textAlign = 'center';
             context.fillText(`APY: ${rate}`, 64, 40);
-            
+
             const texture = new THREE.CanvasTexture(canvas);
             const spriteMaterial = new THREE.SpriteMaterial({ map: texture, transparent: true });
             const sprite = new THREE.Sprite(spriteMaterial);
-            
+
             const angle = (i / rates.length) * Math.PI * 2;
             sprite.position.set(
                 Math.cos(angle) * 2.5,
@@ -1733,30 +1864,42 @@ class ArtisticPortfolio {
                 Math.sin(angle) * 2.5
             );
             sprite.scale.set(0.8, 0.4, 1);
-            
+
             group.add(sprite);
         });
     }
 
     // Scroll-based animations and camera movements
     setupScrollAnimations() {
-        window.addEventListener('scroll', () => {
+        let ticking = false;
+        
+        const handleScroll = () => {
             this.scrollY = window.pageYOffset;
-            this.updateScrollAnimations();
-        });
+            
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    this.updateScrollAnimations();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
 
-        // Quick smooth scroll for navigation
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        // Enhanced smooth scroll for navigation using GSAP
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
-                
+
                 if (targetSection) {
                     const offsetTop = targetSection.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
+                    gsap.to(window, {
+                        duration: 1.2,
+                        scrollTo: { y: offsetTop, autoKill: false },
+                        ease: "power2.inOut"
                     });
                 }
             });
@@ -1767,12 +1910,12 @@ class ArtisticPortfolio {
 
     updateScrollAnimations() {
         const scrollProgress = this.scrollY / (document.body.scrollHeight - window.innerHeight);
-        
+
         // Hero scene scroll effects
         if (this.blockchainGroup) {
             this.blockchainGroup.rotation.y = scrollProgress * Math.PI * 2;
             this.blockchainGroup.rotation.x = scrollProgress * Math.PI;
-            
+
             // Move blockchain nodes diagonally
             this.blockchainNodes.forEach((node, index) => {
                 const offset = scrollProgress * 10;
@@ -1944,7 +2087,7 @@ class ArtisticPortfolio {
         window.addEventListener('mousemove', (event) => {
             this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
             this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-            
+
             this.updateMouseInteractions();
         });
 
@@ -1953,7 +2096,7 @@ class ArtisticPortfolio {
             if (this.skillNodes && this.cameras.skills) {
                 this.raycaster.setFromCamera(this.mouse, this.cameras.skills);
                 const intersects = this.raycaster.intersectObjects(this.skillNodes);
-                
+
                 if (intersects.length > 0) {
                     const selectedNode = intersects[0].object;
                     this.animateSkillNodeSelection(selectedNode);
@@ -1976,11 +2119,11 @@ class ArtisticPortfolio {
         // Skills nodes attraction to mouse
         if (this.skillNodes && this.cameras.skills) {
             this.raycaster.setFromCamera(this.mouse, this.cameras.skills);
-            
+
             this.skillNodes.forEach(node => {
                 const distance = node.position.distanceTo(new THREE.Vector3(this.mouse.x * 10, this.mouse.y * 10, 0));
                 const attraction = Math.max(0, 1 - distance / 5);
-                
+
                 gsap.to(node.scale, {
                     duration: 0.5,
                     x: 1 + attraction * 0.5,
@@ -2035,7 +2178,7 @@ class ArtisticPortfolio {
                 const canvas = this.renderers[key].domElement;
                 const container = canvas.parentElement;
                 const rect = container.getBoundingClientRect();
-                
+
                 this.cameras[key].aspect = rect.width / rect.height;
                 this.cameras[key].updateProjectionMatrix();
                 this.renderers[key].setSize(rect.width, rect.height);
@@ -2048,7 +2191,7 @@ class ArtisticPortfolio {
                 const canvas = this.renderers.projects[index].domElement;
                 const container = canvas.parentElement;
                 const rect = container.getBoundingClientRect();
-                
+
                 this.cameras.projects[index].aspect = rect.width / rect.height;
                 this.cameras.projects[index].updateProjectionMatrix();
                 this.renderers.projects[index].setSize(rect.width, rect.height);
@@ -2059,7 +2202,7 @@ class ArtisticPortfolio {
     // Main animation loop
     animate() {
         requestAnimationFrame(() => this.animate());
-        
+
         const time = this.clock.getElapsedTime();
 
         // Update shader uniforms
@@ -2086,12 +2229,12 @@ class ArtisticPortfolio {
         if (this.blockchainGroup) {
             // Continuous rotation with variation
             this.blockchainGroup.rotation.y += 0.005;
-            
+
             // Animate individual nodes
             this.blockchainNodes.forEach((node, index) => {
                 node.rotation.x = time * 0.3 + index * 0.2;
                 node.rotation.y = time * 0.2 + index * 0.1;
-                
+
                 // Floating motion
                 node.position.y += Math.sin(time * 2 + index) * 0.02;
             });
@@ -2101,12 +2244,12 @@ class ArtisticPortfolio {
         if (this.floatingGeometry) {
             this.floatingGeometry.children.forEach((mesh, index) => {
                 const userData = mesh.userData;
-                
+
                 // Rotation
                 mesh.rotation.x += userData.rotationSpeed.x;
                 mesh.rotation.y += userData.rotationSpeed.y;
                 mesh.rotation.z += userData.rotationSpeed.z;
-                
+
                 // Floating
                 mesh.position.y = userData.initialY + Math.sin(time * userData.floatSpeed) * userData.floatRange;
             });
@@ -2116,7 +2259,7 @@ class ArtisticPortfolio {
     animateAboutScene(time) {
         if (this.dnaGroup) {
             this.dnaGroup.rotation.y = time * 0.1;
-            
+
             // Animate data nodes
             this.dnaGroup.children.forEach(child => {
                 if (child.userData.floatSpeed) {
@@ -2130,13 +2273,13 @@ class ArtisticPortfolio {
     animateSkillsScene(time) {
         if (this.skillsGroup) {
             this.skillsGroup.rotation.y = time * 0.05;
-            
+
             // Animate skill nodes
             this.skillNodes.forEach((node, index) => {
                 node.position.y += Math.sin(time * 2 + index) * 0.01;
-                
+
                 // Different rotation based on shape
-                switch(node.userData.shape) {
+                switch (node.userData.shape) {
                     case 'gear':
                         node.rotation.z = time * 0.5;
                         break;
@@ -2151,7 +2294,7 @@ class ArtisticPortfolio {
                         node.rotation.y = time * 0.3;
                 }
             });
-            
+
             // Animate flow particles in enhanced connections
             this.skillsGroup.children.forEach(child => {
                 if (child.userData.type === 'flow_particle') {
@@ -2159,10 +2302,10 @@ class ArtisticPortfolio {
                     if (child.userData.progress > 1) {
                         child.userData.progress = 0;
                     }
-                    
+
                     const point = child.userData.curve.getPoint(child.userData.progress);
                     child.position.copy(point);
-                    
+
                     // Pulsing effect
                     const scale = 1 + Math.sin(time * 5 + child.userData.progress * 10) * 0.5;
                     child.scale.setScalar(scale);
@@ -2174,7 +2317,7 @@ class ArtisticPortfolio {
     animateContactScene(time) {
         if (this.contactGroup) {
             this.contactGroup.rotation.y = time * 0.1;
-            
+
             // Animate orbital rings
             if (this.contactRings) {
                 this.contactRings.forEach((ring, index) => {
@@ -2182,7 +2325,7 @@ class ArtisticPortfolio {
                     ring.rotation.z = time * (0.15 + index * 0.05);
                 });
             }
-            
+
             // Animate satellites and data points
             this.contactGroup.children.forEach(child => {
                 if (child.userData.orbitSpeed) {
@@ -2207,7 +2350,7 @@ class ArtisticPortfolio {
         if (userData.wheel) {
             userData.wheel.rotation.z = time * 2;
         }
-        
+
         if (userData.ballGroup) {
             userData.ballGroup.children.forEach((ball, index) => {
                 ball.position.y += Math.sin(time * ball.userData.bounceSpeed + ball.userData.bouncePhase) * 0.1;
@@ -2248,12 +2391,12 @@ class ArtisticPortfolio {
 
     animateCircuitBreakerScene(group, time) {
         const userData = group.userData;
-        
+
         // Animate switch
         if (userData.switch) {
             userData.switch.rotation.z = Math.sin(time * 0.5) * 0.3;
         }
-        
+
         // Animate electrical arcs
         group.children.forEach(child => {
             if (child.type === 'Line' && child.userData.flickerSpeed) {
@@ -2279,18 +2422,18 @@ class ArtisticPortfolio {
 
     animateAegisCircuitBreakerScene(group, time) {
         const userData = group.userData;
-        
+
         // Animate main breaker
         if (userData.breaker) {
             userData.breaker.rotation.y = Math.sin(time * 0.3) * 0.1;
         }
-        
+
         // Animate logo
         if (userData.logo) {
             userData.logo.rotation.z += 0.02;
             userData.logo.material.emissiveIntensity = 0.3 + Math.sin(time * 2) * 0.2;
         }
-        
+
         // Animate indicator lights
         group.children.forEach(child => {
             if (child.userData.pulseSpeed) {
@@ -2315,13 +2458,13 @@ class ArtisticPortfolio {
 
     animateZKStablecoinScene(group, time) {
         const userData = group.userData;
-        
+
         // Animate main coin
         if (userData.coin) {
             userData.coin.rotation.y += 0.02;
             userData.coin.position.y = Math.sin(time * 0.5) * 0.2;
         }
-        
+
         // Animate ZK proofs
         if (userData.zkProofs) {
             userData.zkProofs.rotation.y = time * 0.3;
@@ -2329,13 +2472,13 @@ class ArtisticPortfolio {
                 proof.material.opacity = 0.3 - index * 0.03 + Math.sin(time * 2 + index * 0.5) * 0.1;
             });
         }
-        
+
         // Animate privacy shield
         if (userData.shield && userData.shieldMaterial) {
             userData.shield.rotation.y = time * 0.2;
             userData.shieldMaterial.uniforms.time.value = time;
         }
-        
+
         // Animate circom nodes and privacy streams
         group.children.forEach(child => {
             if (child.userData.orbitSpeed) {
@@ -2359,7 +2502,7 @@ class ArtisticPortfolio {
             } else if (child.userData.velocity && child.userData.type === 'privacy') {
                 // Privacy data streams
                 child.position.add(child.userData.velocity);
-                
+
                 // Boundary check and reset
                 if (child.position.length() > 8) {
                     child.position.set(
@@ -2368,7 +2511,7 @@ class ArtisticPortfolio {
                         (Math.random() - 0.5) * 2
                     );
                 }
-                
+
                 child.rotation.x += 0.05;
                 child.rotation.y += 0.03;
             }
@@ -2379,19 +2522,19 @@ class ArtisticPortfolio {
         if (this.renderers.hero && this.scenes.hero && this.cameras.hero) {
             this.renderers.hero.render(this.scenes.hero, this.cameras.hero);
         }
-        
+
         if (this.renderers.about && this.scenes.about && this.cameras.about) {
             this.renderers.about.render(this.scenes.about, this.cameras.about);
         }
-        
+
         if (this.renderers.skills && this.scenes.skills && this.cameras.skills) {
             this.renderers.skills.render(this.scenes.skills, this.cameras.skills);
         }
-        
+
         if (this.renderers.contact && this.scenes.contact && this.cameras.contact) {
             this.renderers.contact.render(this.scenes.contact, this.cameras.contact);
         }
-        
+
         // Project scenes removed - no longer rendering Three.js project animations
     }
 }
@@ -2399,20 +2542,20 @@ class ArtisticPortfolio {
 // Initialize the portfolio
 document.addEventListener('DOMContentLoaded', () => {
     new ArtisticPortfolio();
-    
+
     // Navigation animations
-    gsap.from('.nav', { 
-        y: -100, 
-        opacity: 0, 
-        duration: 1, 
+    gsap.from('.nav', {
+        y: -100,
+        opacity: 0,
+        duration: 1,
         delay: 0.5,
-        ease: "power2.out" 
+        ease: "power2.out"
     });
-    
+
     // Hero text animations
-    gsap.fromTo('.hero-title .title-line', 
+    gsap.fromTo('.hero-title .title-line',
         { y: '100%' },
-        { 
+        {
             y: '0%',
             duration: 1.2,
             stagger: 0.2,
@@ -2423,7 +2566,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gsap.fromTo(['.hero-subtitle', '.hero-description', '.hero-buttons'],
         { opacity: 0, y: 30 },
-        { 
+        {
             opacity: 1,
             y: 0,
             duration: 1,
